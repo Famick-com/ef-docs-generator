@@ -1,6 +1,11 @@
 # EF Docs Generator
 
-A .NET tool that generates documentation from Entity Framework Core models, including Mermaid ER diagrams and per-entity markdown documentation.
+A .NET 10 tool that generates documentation from Entity Framework Core models, including Mermaid ER diagrams and per-entity markdown documentation.
+
+## Requirements
+
+- .NET 10 SDK or later
+- Target assembly must be built for .NET 10
 
 ## Features
 
@@ -30,19 +35,19 @@ dotnet tool install EfDocsGenerator
 
 ```bash
 # Generate docs from a compiled assembly
-ef-docs -a ./bin/Debug/net8.0/MyApp.dll
+ef-docs -a ./bin/Debug/net10.0/MyApp.dll
 
 # Specify a DbContext when multiple exist
-ef-docs -a ./bin/Debug/net8.0/MyApp.dll -c MyDbContext
+ef-docs -a ./bin/Debug/net10.0/MyApp.dll -c MyDbContext
 
 # Custom output locations
-ef-docs -a ./bin/Debug/net8.0/MyApp.dll -o docs/schema.md -d docs/entities
+ef-docs -a ./bin/Debug/net10.0/MyApp.dll -o docs/schema.md -d docs/entities
 
 # List available DbContext types
-ef-docs -a ./bin/Debug/net8.0/MyApp.dll --list-contexts
+ef-docs -a ./bin/Debug/net10.0/MyApp.dll --list-contexts
 
 # Generate only the ER diagram (no entity docs)
-ef-docs -a ./bin/Debug/net8.0/MyApp.dll --no-entity-docs
+ef-docs -a ./bin/Debug/net10.0/MyApp.dll --no-entity-docs
 ```
 
 ## Command Line Options
@@ -75,7 +80,7 @@ When using `--exclude-audit`, these columns are excluded by default:
 Override with `--audit-columns`:
 
 ```bash
-ef-docs -a ./bin/Debug/net8.0/MyApp.dll --exclude-audit --audit-columns "Created,Modified,Deleted"
+ef-docs -a ./bin/Debug/net10.0/MyApp.dll --exclude-audit --audit-columns "Created,Modified,Deleted"
 ```
 
 ## Output Examples
@@ -167,7 +172,7 @@ Add documentation generation to your build pipeline:
   run: |
     dotnet tool restore
     dotnet build
-    dotnet ef-docs -a ./src/MyApp/bin/Debug/net8.0/MyApp.dll -o docs/schema.md -d docs/entities
+    dotnet ef-docs -a ./src/MyApp/bin/Debug/net10.0/MyApp.dll -o docs/schema.md -d docs/entities
 
 - name: Commit documentation changes
   uses: stefanzweifel/git-auto-commit-action@v5
@@ -179,7 +184,7 @@ Add documentation generation to your build pipeline:
 ## Building from Source
 
 ```bash
-git clone https://github.com/miketherien/ef-docs-generator.git
+git clone https://github.com/mtherien/ef-docs-generator.git
 cd ef-docs-generator
 dotnet build
 dotnet pack
