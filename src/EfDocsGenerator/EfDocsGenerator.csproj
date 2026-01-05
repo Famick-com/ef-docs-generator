@@ -16,7 +16,7 @@
     <PackageTags>efcore;entityframework;documentation;mermaid;diagram;database</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <RepositoryUrl>https://github.com/mtherien/ef-docs-generator</RepositoryUrl>
+    <RepositoryUrl>https://github.com/Famick-com/ef-docs-generator</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 

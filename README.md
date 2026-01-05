@@ -184,7 +184,7 @@ Add documentation generation to your build pipeline:
 ## Building from Source
 
 ```bash
-git clone https://github.com/mtherien/ef-docs-generator.git
+git clone https://github.com/Famick-com/ef-docs-generator.git
 cd ef-docs-generator
 dotnet build
 dotnet pack
